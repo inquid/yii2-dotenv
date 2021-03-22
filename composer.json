@@ -1,5 +1,5 @@
 {
-    "name": "yiithings/yii2-dotenv",
+    "name": "inquid/yii2-dotenv",
     "description": "PHP DotEnv for Yii2 framework",
     "type": "yii2-extension",
     "keywords": ["yii2","extension","dotenv"],
@@ -8,6 +8,10 @@
         {
             "name": "Panlatent",
             "email": "panlatent@gmail.com"
+        },
+        {
+            "name": "Industrial Quality Ideas LLC",
+            "email": "contact@inquid.co"
         }
     ],
     "require": {

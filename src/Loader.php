@@ -13,10 +13,9 @@ class Loader extends Component
      *
      * @param string $path
      * @param string $file
-     * @param bool   $overload
      * @return bool
      */
-    public static function load($path = '', $file = '.env', $overload = false)
+    public static function load($path = '', $file = '.env')
     {
         /*
          * Find Composer base directory.
@@ -67,15 +66,12 @@ class Loader extends Component
         if (! file_exists(rtrim($path, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . $file)) {
             return false;
         }
-        $dotEnv = DotEnv::createImmutable($path, $file);
+        $dotEnv = DotEnv::createUnsafeImmutable($path, $file);
+
         /*
-         * Overload or load method by environment variable COMPOSER_DOTENV_OVERLOAD.
+         * Load method.
          */
-        if ($overload) {
-            $dotEnv->overload();
-        } else {
-            $dotEnv->load();
-        }
+        $dotEnv->load();
 
         return true;
     }

@@ -34,8 +34,7 @@ if ( ! function_exists('env')) {
             } else {
                 Loader::load(
                     defined('DOTENV_PATH') ? DOTENV_PATH : '',
-                    defined('DOTENV_FILE') ? DOTENV_FILE : '',
-                    defined('DOTENV_OVERLOAD') ? DOTENV_OVERLOAD : false
+                    defined('DOTENV_FILE') ? DOTENV_FILE : ''
                 );
                 $loaded = true;
             }
